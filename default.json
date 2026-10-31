@@ -10,6 +10,12 @@
   "minimumReleaseAge": "1 day",
   "packageRules": [
     {
+      "description": "Automerge minor and patch updates of stable (1.0 and later) dependencies once required checks pass. A repository opts a package out with a later rule that sets automerge to false.",
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    },
+    {
       "description": "Only Docker Hub exposes release timestamps. GHCR/Quay/ECR tags have none, so with the Renovate 42 default (minimumReleaseAgeBehaviour=timestamp-required) their updates stay in 'Pending Status Checks' forever instead of ever getting a PR.",
       "matchDatasources": ["docker"],
       "minimumReleaseAgeBehaviour": "timestamp-optional"
