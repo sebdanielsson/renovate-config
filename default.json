@@ -1,0 +1,8 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Shared base config for sebdanielsson repositories. See README.md.",
+  "extends": [
+    "config:recommended",
+    "customManagers:githubActionsVersions"
+  ]
+}
