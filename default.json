@@ -4,5 +4,15 @@
   "extends": [
     "config:recommended",
     "customManagers:githubActionsVersions"
+  ],
+  "rangeStrategy": "bump",
+  "semanticCommits": "enabled",
+  "minimumReleaseAge": "1 day",
+  "packageRules": [
+    {
+      "description": "Only Docker Hub exposes release timestamps. GHCR/Quay/ECR tags have none, so with the Renovate 42 default (minimumReleaseAgeBehaviour=timestamp-required) their updates stay in 'Pending Status Checks' forever instead of ever getting a PR.",
+      "matchDatasources": ["docker"],
+      "minimumReleaseAgeBehaviour": "timestamp-optional"
+    }
   ]
 }
