@@ -1,0 +1,6 @@
+{
+  // One line per paragraph, let editors soft-wrap.
+  "MD013": false,
+  // UCI config samples use tabs.
+  "MD010": { "code_blocks": false }
+}
