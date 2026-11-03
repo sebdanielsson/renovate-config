@@ -31,6 +31,7 @@ Extend the default preset in a repository's `renovate.json`:
 - `rangeStrategy: bump`, so ranges such as `^1.2.0` are raised to the new version instead of only updating the lockfile.
 - `semanticCommits: enabled`, so update commits use Conventional Commits (`chore(deps): ...`, `fix(deps): ...`).
 - `minimumReleaseAge: 1 day`, so a release that is pulled again shortly after publishing never reaches a PR. Repositories can set a longer age.
+- A `stylelint` group for `stylelint`, `stylelint-*`, `@stylelint/*` and scoped `@*/stylelint-*` packages (such as `@dreamsicle.io/stylelint-config-tailwindcss`), so Stylelint and its configs and plugins land in one PR. Majors get their own grouped PR as usual. A repository rule that sets `groupName` later, such as one grouping all patch updates, takes over for the updates it matches.
 - `minimumReleaseAgeBehaviour: timestamp-optional` for Docker images. Only Docker Hub exposes release timestamps, so without it updates of GHCR, Quay and ECR images would wait for a timestamp forever and the images would never be updated. With it, an update that has no timestamp gets its PR right away.
 - [`customManagers:githubActionsVersions`](https://docs.renovatebot.com/presets-customManagers/#custommanagersgithubactionsversions), which updates tool versions pinned inside workflow `run:` steps. Renovate's `github-actions` manager only reads `uses:` references, so a version hardcoded in a shell script is invisible to it. Move the version into an env var ending in `_VERSION` and annotate it on the line directly above:
 
