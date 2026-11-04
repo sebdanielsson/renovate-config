@@ -1,0 +1,7 @@
+# Install scripts in Renovate's dependency tree. The config validator needs none of them:
+# re2 is optional and Renovate falls back to JavaScript regexes without it.
+allowBuilds:
+  core-js-pure: false
+  dtrace-provider: false
+  protobufjs: false
+  re2: false
