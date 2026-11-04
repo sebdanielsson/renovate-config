@@ -8,6 +8,10 @@
   "rangeStrategy": "bump",
   "semanticCommits": "enabled",
   "minimumReleaseAge": "1 day",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  },
   "packageRules": [
     {
       "description": "Automerge minor and patch updates of stable (1.0 and later) dependencies once required checks pass. A repository opts a package out with a later rule that sets automerge to false.",
