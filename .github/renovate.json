@@ -1,0 +1,11 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>sebdanielsson/renovate-config"],
+  "packageRules": [
+    {
+      "description": "Renovate publishes several releases a day, so a daily bump would land an automerged PR every few hours. Take one a week instead.",
+      "matchPackageNames": ["renovate"],
+      "schedule": ["before 4am on monday"]
+    }
+  ]
+}

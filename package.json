@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "scripts": {
+    "lint": "pnpm run lint:renovate && pnpm run lint:markdown",
+    "lint:renovate": "renovate-config-validator --strict --no-global default.json .github/renovate.json",
+    "lint:markdown": "markdownlint-cli2 \"**/*.md\" \"#node_modules\""
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "0.24.0",
+    "renovate": "44.210.0"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.17.0",
+      "onFail": "download"
+    },
+    "runtime": {
+      "name": "node",
+      "version": "24.22.2",
+      "onFail": "download"
+    }
+  }
+}
